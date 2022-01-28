@@ -12,12 +12,32 @@ public class MarkdownParseTest {
     public void addition() {
         assertEquals(2, 1 + 1);
     }
+    
 
     @Test
     public void testFile1() throws IOException {
         Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
-        List<String> expected = List.of("https://something.com", "some-page.html");
+        List<String> expected = List.of("http");
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
+
+    @Test
+    public void testFile2() throws IOException {
+        Path fileName = Path.of("test-file2.md");
+	    String contents = Files.readString(fileName);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void testFile3() throws IOException {
+        Path fileName = Path.of("test-file3.md");
+	    String contents = Files.readString(fileName);
+        List<String> expected = List.of("google.com");
+        System.out.println(expected);
+        assertEquals(expected, MarkdownParse.getLinks(contents));
+    }
+
+    
 }
