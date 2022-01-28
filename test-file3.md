@@ -1,1 +1,2 @@
-[emptyFile]()
+[emptyLink]()
+[nextLink](google.com)
