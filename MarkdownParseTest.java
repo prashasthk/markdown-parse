@@ -18,7 +18,7 @@ public class MarkdownParseTest {
     public void testFile1() throws IOException {
         Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
-        List<String> expected = List.of("http");
+        List<String> expected = List.of("https");
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
 
