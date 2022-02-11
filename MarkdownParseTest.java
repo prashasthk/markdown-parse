@@ -34,7 +34,6 @@ public class MarkdownParseTest {
         Path fileName = Path.of("test-file3.md");
 	    String contents = Files.readString(fileName);
         List<String> expected = List.of("google.com");
-        System.out.println(expected);
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
 
